@@ -151,17 +151,8 @@
 
 <?php
 // Connection details
- $host = "localhost";
-    $user = "Didas 222016349";
-    $pass = "Didas222016349";
-    $database = "graduate_student_management";
-// Creating connection
-$connection = new mysqli($host, $user, $pass, $database);
+   include('db_connection.php');
 
-// Check connection
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
 // SQL query to fetch data from financial_issues_info table
 $sql = "SELECT * FROM financial_issues_info";
 $result = $connection->query($sql);
@@ -202,18 +193,8 @@ $result = $connection->query($sql);
         </tr>
         <?php
         // Define connection parameters
-        $host = "localhost";
-        $user = "root";
-        $pass = "";
-        $database = "graduate_student_management";
-
-        // Establish a new connection
-        $connection = new mysqli($host, $user, $pass, $database);
-
-        // Check if connection was successful
-        if ($connection->connect_error) {
-            die("Connection failed: " . $connection->connect_error);
-        }
+       
+        include('db_connection.php');
 
         // Prepare SQL query to retrieve all products
         $sql = "SELECT * FROM financial_issues_info";
